@@ -16,12 +16,10 @@ while True:
     x=x+y
     i+=1
     if len(digits(x))==1000:
-        print x
         print i
         break
     y=y+x
     i+=1
     if len(digits(y))==1000:
-        print y
         print i
         break

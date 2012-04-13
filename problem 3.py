@@ -15,9 +15,7 @@ while a**2<n:
     if x%a==0:
         factors.append(a)
         x=x/a
-        print a
     else:
         a+=2
         
-print factors
 print 'The answer is...' + str(factors[len(factors)-1])

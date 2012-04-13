@@ -1,42 +1,42 @@
 def proper_divisors(n):
-    proper_factors=[]
+    proper_divisors=[]
     nums= range(1, n)
     for num in nums:
         if n%num==0:
-            factors.append(num)
+            proper_divisors.append(num)
         else:
             continue
-    return proper_factors
+    return proper_divisors
 
 def abundant(N): #determines all abundant numbers up to N
     abundant=[]
     nums=range(1, N+1)
     for num in nums:
-        x=factors(num)
-        x.remove(num)
+        x=proper_divisors(num)
         if sum(x)>num:
             abundant.append(num)
         else:
             continue
     return abundant
-    
 
-N=28123
-nums = range(1, N+1)
-nums.reverse()
-numbers=[]
-abund=abundant(N)
-print abund
-for num in nums:
-    for a in abund:
-        if abund.count((num-a))==1:
+def check(n, abun):
+    for a in abun:
+        if n<a:
             break
         else:
-            continue
+            if abun.count((num-a))==1:
+                return False
+            else:
+                continue
+    return True
+    
+print 'please wait....'
+N=28123
+nums = range(1, N+1)
+numbers=[]
+abund=abundant(N)
+abund.sort()
+for num in nums:
+    if check(num, abund):
         numbers.append(num)
-        print num
 print sum(numbers)
-
-
-
-

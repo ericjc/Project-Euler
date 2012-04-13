@@ -11,6 +11,4 @@ def digits(n):
     return digits
 
 t=2**1000
-print t
-print digits(t)
 print sum(digits(t))
